@@ -1,0 +1,15 @@
+{
+  "name": "spool-v2-gnosis",
+  "version": "1.0.0",
+  "description": "Gnosis Multisig operations for Spool V2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.12.12",
+    "ethers": "^5.7.2"
+  }
+}
