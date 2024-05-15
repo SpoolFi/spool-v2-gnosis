@@ -2,19 +2,19 @@ import { SmartVaultSpecificationStruct } from '../../abi/SmartVaultFactoryHpf';
 
 type Config = {
     clientIndex: number; // index of client in 'clients' eg. 0 for MAGPIE
-    signerIndex: number;  // index in safeSigners, eg. 0 for the first signer
+    ownerIndex: number;  // index in safeOwners, eg. 0 for the first owner
 };
 
 export const config: Config = {
-    clientIndex: 0,
-    signerIndex: 0
+    clientIndex: 3,
+    ownerIndex: 0
 } as const;
 
 type Client = {
     name: string;
     env: string;
     safeAddress: string;
-    safeSigners: string[];
+    safeOwners: string[];
     vaultSpecs: SmartVaultSpecificationStruct[];
 };
 
@@ -23,7 +23,7 @@ export const clients: Client[] = [
         name: "MAGPIE",
         env: "mainnet-prod",
         safeAddress: "",
-        safeSigners: [],
+        safeOwners: [],
         vaultSpecs: [
             {
                 smartVaultName: 'MAGPIE - USDC',
@@ -74,7 +74,7 @@ export const clients: Client[] = [
         name: "NUKLAI",
         env: "mainnet-prod",
         safeAddress: "",
-        safeSigners: [],
+        safeOwners: [],
         vaultSpecs: [
             {
                 smartVaultName: 'NUKLAI - USDC',
@@ -125,7 +125,7 @@ export const clients: Client[] = [
         name: "KASU",
         env: "mainnet-prod",
         safeAddress: "",
-        safeSigners: [],
+        safeOwners: [],
         vaultSpecs: [
             {
                 smartVaultName: 'KASU - USDC',
@@ -175,8 +175,15 @@ export const clients: Client[] = [
     {
         name: "AUKI",
         env: "mainnet-prod",
-        safeAddress: "",
-        safeSigners: [],
+        safeAddress: "0x48f9ECeA7548CD7f0cCF0f925A99CB84251FC9e8",
+        safeOwners: [
+            "0x133359C8E503Ff6823C33443CE87530C99Ac038A",
+            "0x225F31863b892dd747D06c1F46DcebFa73907870",
+            "0xF40A5daC47f43A40ae005911A2392Ca5d3782b2e",
+            "0xE24f1549373AcED8A3c0a18b63D8d073d446AD26",
+            "0x14c9EbaE801D47847D022F138d98Bf58b1ba7cdb",
+            "0x42aD2E416f10c51971f792060f56C2aB2e5671e9"
+        ],
         vaultSpecs: [
             {
                 smartVaultName: 'AUKI - USDC',

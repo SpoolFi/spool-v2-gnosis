@@ -25,7 +25,7 @@ async function main() {
             description: `Deployment of smart vaults for ${client.name}`,
             txBuilderVersion: '1.16.3',
             createdFromSafeAddress: client.safeAddress,
-            createdFromOwnerAddress: client.safeSigners[config.signerIndex],
+            createdFromOwnerAddress: client.safeOwners[config.ownerIndex],
         },
         transactions: client.vaultSpecs.map((spec) => ({
             to: factoryAddress,
