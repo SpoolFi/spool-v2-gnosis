@@ -6,7 +6,7 @@ export function readEnvData(envName: string): {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     constants: any;
 } {
-    const dataFolderPath = path.join(__dirname, '..', 'data');
+    const dataFolderPath = path.join(__dirname, '../../', 'data');
     const contractsFilePath = path.join(
         dataFolderPath,
         `${envName}.contracts.json`,

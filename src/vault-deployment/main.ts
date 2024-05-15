@@ -3,13 +3,12 @@ import SmartVaultFactoryHpf from '../../abi/SmartVaultFactoryHpf.json';
 import {
     getSmartVaultFactoryHpfAddress,
     readEnvData,
-} from '../../utils/read-env-data';
+} from '../utils/read-env-data';
 
-import { config, clients } from "./config";
+import { client } from "./client";
 
 async function main() {
     // setup
-    const client = clients[config.clientIndex];
     const { contracts } = readEnvData(client.env);
 
     // batch creation
@@ -25,7 +24,7 @@ async function main() {
             description: `Deployment of smart vaults for ${client.name}`,
             txBuilderVersion: '1.16.3',
             createdFromSafeAddress: client.safeAddress,
-            createdFromOwnerAddress: client.safeOwners[config.ownerIndex],
+            createdFromOwnerAddress: client.safeOwner,
         },
         transactions: client.vaultSpecs.map((spec) => ({
             to: factoryAddress,

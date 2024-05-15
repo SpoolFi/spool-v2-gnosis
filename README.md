@@ -6,7 +6,11 @@
 
 ## Vault Deployment Module: Instructions
 
-- modify `config` in `src/vault-deployment/config.ts` with index of your client, and index of the owner that will be initiating the transactions. If your client doesn't exist (or is missing `safeAddress`/`safeOwners` data), update/extend the config.
+- Create client file:
+    - `cd src/vault-deployment`
+    - `cp client.ts.template client.ts`
+
+- modify `client.ts` with your client and vault specification
 
 - execute the batch generation: `ts-node src/vault-deployment/main.ts`
 
